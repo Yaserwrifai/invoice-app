@@ -9,7 +9,7 @@ const Sidebar = () => {
       <div className="sidebar__container">
         <div className="sidebar__header">
           <div className="sidebar__logo">
-            <h2>project invoice</h2>
+            <h2>Project Invoice</h2>
           </div>
         </div>
         <div className='sidebar__bottom'>
