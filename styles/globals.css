@@ -1,8 +1,7 @@
+/* ======= google fonts ============= */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
 
-/*---Google Fonts ----*/
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
-
-/* css variables */
+/* ======== css variables ========= */
 :root {
   --primary-color: #7c5dfa;
   --secondary-color: #1e2139;
@@ -16,17 +15,17 @@
   --delete-btn-bg: #ec5757;
   --edit-btn-bg: #252945;
 }
-/* base Style */
-*{
-  padding:0;
-  margin:0;
+
+/* ======== base style ============ */
+* {
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
-  font-family: "Poppins",sans-serif;
-  color:white;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
-  background: var(--body-bg);
+  background: rgb(218, 215, 245);
 }
 
 a {
@@ -91,7 +90,6 @@ p {
   color: var(--pending-status-color);
 }
 
-
 /* ========== sidebar css ========== */
 .sidebar {
   width: 120px;
@@ -131,3 +129,40 @@ p {
 .sidebar__bottom img {
   border-radius: 50%;
 }
+
+/* =========== home page style start =========== */
+.invoice__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.invoice__header-logo {
+  color: #fff;
+  padding: 20px 20px 20px 20px;
+}
+
+.invoice__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px;
+  background: var(--secondary-color);
+  border-radius: 0.5rem;
+  margin-bottom: 1.9rem;
+  transition: 1s;
+  color: #fff;
+  cursor: pointer;
+}
+
+.invoice__item:hover {
+  border: 1px solid var(--primary-color);
+  transform: scaleY(1.1);
+}
+
+.invoice__container {
+  padding-bottom: 200px !important;
+}
+
+/* =========== home page style end =========== */
