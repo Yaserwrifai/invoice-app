@@ -12,6 +12,23 @@ const AddNew = () => {
     console.log('items....>', items)
   };
 
+  // handler change
+  const handlerChange = (event, i) => {
+    const { name, value } = event.target;
+    const list = [...items];
+    list[i][name] = value;
+    list[i]["total"] = list[i]["quantity"] * list[i]["price"];
+    setItems(list);
+  };
+
+  // delete product item
+  const deleteItem = (i) => {
+    const inputData = [...items];
+    inputData.splice(i, 1);
+    setItems(inputData);
+  };
+
+    
   
   return (
     <div className="main__container">
@@ -103,32 +120,36 @@ const AddNew = () => {
 
             <div className="invoice__items">
               <h3>Item List</h3>
+              {items.map((item, i) => (
+             
 
-              <div className="item">
+              <div className="item" key={i}>
                 <div className="form__group inline__form-group">
                   <div>
                     <p>Item Name</p>
-                    <input type="text" name="name" />
+                    <input type="text" name="name" onChange={e=>handlerChange(e,i)} />
                   </div>
 
                   <div>
                     <p>Qty</p>
-                    <input type="number" name="quantity" />
+                    <input type="number" name="quantity" onChange={e=>handlerChange(e,i)} />
                   </div>
 
                   <div>
                     <p>Price</p>
-                    <input type="number" name="price" />
+                    <input type="number" name="price" onChange={e=>handlerChange(e,i)} />
                   </div>
 
                   <div>
                     <p>Total</p>
-                    <h4>$450</h4>
+                    <h4>{item.total}</h4>
+                   
                   </div>
-
-                  <button className="edit__btn">Delete</button>
+                
+                  <button className="edit__btn" onClick={()=>deleteItem(i)}>Delete</button>
                 </div>
               </div>
+                 ))}
             </div>
 
             <button className="add__item-btn" onClick={addItem}>
